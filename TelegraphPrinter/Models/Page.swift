@@ -16,7 +16,7 @@ class Page: Codable {
     var authorName: String?
     var authorUrl: String?
     var imageUrl: String?
-    var content: [String]?
+    var content: [NodeElement]?
     var canEdit: Bool?
     
 }

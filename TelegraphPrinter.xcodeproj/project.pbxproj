@@ -11,10 +11,13 @@
 		6040D4C6296384CA00F336BC /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6040D4C5296384CA00F336BC /* Page.swift */; };
 		6040D4C9296385BF00F336BC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6040D4C8296385BF00F336BC /* README.md */; };
 		6040D4CB2963884500F336BC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6040D4CA2963884500F336BC /* .gitignore */; };
+		6040D4CD2963963100F336BC /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6040D4CC2963963100F336BC /* Node.swift */; };
 		604A683F292A061D007EAB6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A683E292A061D007EAB6C /* AppDelegate.swift */; };
 		604A6841292A061D007EAB6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A6840292A061D007EAB6C /* ViewController.swift */; };
 		604A6843292A061E007EAB6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 604A6842292A061E007EAB6C /* Assets.xcassets */; };
 		604A6846292A061E007EAB6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 604A6844292A061E007EAB6C /* Main.storyboard */; };
+		60F052ED2964251A0044AC7E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F052EC2964251A0044AC7E /* Response.swift */; };
+		60F052EF296431860044AC7E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F052EE296431860044AC7E /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +25,15 @@
 		6040D4C5296384CA00F336BC /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		6040D4C8296385BF00F336BC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		6040D4CA2963884500F336BC /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		6040D4CC2963963100F336BC /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		604A683B292A061D007EAB6C /* TelegraphPrinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegraphPrinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		604A683E292A061D007EAB6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		604A6840292A061D007EAB6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		604A6842292A061E007EAB6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		604A6845292A061E007EAB6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		604A6847292A061E007EAB6C /* TelegraphPrinter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TelegraphPrinter.entitlements; sourceTree = "<group>"; };
+		60F052EC2964251A0044AC7E /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		60F052EE296431860044AC7E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				6040D4C5296384CA00F336BC /* Page.swift */,
+				60F052EC2964251A0044AC7E /* Response.swift */,
+				6040D4CC2963963100F336BC /* Node.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -87,11 +95,12 @@
 			isa = PBXGroup;
 			children = (
 				604A683E292A061D007EAB6C /* AppDelegate.swift */,
+				60F052EE296431860044AC7E /* Extensions.swift */,
 				6040D4C4296384B600F336BC /* Controllers */,
 				6040D4C3296384AD00F336BC /* Services */,
 				6040D4C7296384CF00F336BC /* Models */,
-				604A6842292A061E007EAB6C /* Assets.xcassets */,
 				604A6844292A061E007EAB6C /* Main.storyboard */,
+				604A6842292A061E007EAB6C /* Assets.xcassets */,
 				604A6847292A061E007EAB6C /* TelegraphPrinter.entitlements */,
 			);
 			path = TelegraphPrinter;
@@ -125,7 +134,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					604A683A292A061D007EAB6C = {
 						CreatedOnToolsVersion = 14.1;
@@ -170,9 +179,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6040D4C22963847000F336BC /* TelegraphService.swift in Sources */,
+				6040D4CD2963963100F336BC /* Node.swift in Sources */,
 				604A6841292A061D007EAB6C /* ViewController.swift in Sources */,
 				6040D4C6296384CA00F336BC /* Page.swift in Sources */,
+				60F052ED2964251A0044AC7E /* Response.swift in Sources */,
 				604A683F292A061D007EAB6C /* AppDelegate.swift in Sources */,
+				60F052EF296431860044AC7E /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +235,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -240,7 +253,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -283,6 +296,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -294,7 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -309,10 +323,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TelegraphPrinter/TelegraphPrinter.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = LFA8M8P3Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -326,7 +342,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = airatk.TelegraphPrinter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -341,10 +357,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TelegraphPrinter/TelegraphPrinter.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = LFA8M8P3Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -358,7 +376,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = airatk.TelegraphPrinter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
