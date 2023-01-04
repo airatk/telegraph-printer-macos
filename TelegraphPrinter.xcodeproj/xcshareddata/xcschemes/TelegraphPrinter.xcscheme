@@ -50,13 +50,6 @@
             ReferencedContainer = "container:TelegraphPrinter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "TELEGRAPH_ACCESS_TOKEN"
-            value = "5bb4047c6e66e8c70d61b9b399a4a5bada0dc0063851bde80202b0174789"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

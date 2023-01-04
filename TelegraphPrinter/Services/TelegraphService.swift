@@ -13,7 +13,15 @@ class TelegraphService {
     public let telegraphUrl = "https://telegra.ph/"
     
     private let telegraphApiUrl = "https://api.telegra.ph/"
-    private let accessToken = ProcessInfo.processInfo.environment["TELEGRAPH_ACCESS_TOKEN"]!
+    private let accessToken = {
+        guard
+            let path = Bundle.main.path(forResource: "Keys", ofType: "plist"),
+            let keys = NSDictionary(contentsOfFile: path),
+            let accessToken = keys["TELEGRAPH_ACCESS_TOKEN"] as? String
+        else { return "" }
+        
+        return accessToken
+    }()
     private let jsonDecoder = {
         let jsonDecoder = JSONDecoder()
         
