@@ -27,22 +27,21 @@ class ViewController: NSViewController {
         
         guard !self.inputView.string.isEmpty else { return }
         
-        let pagesRawContent = self.getPagesContentFromInputView()
+        let pagesRawContent = self.getPagesRawContentFromInputView()
         
         for (index, pageRawContent) in pagesRawContent.enumerated() {
+            let (title, content) = self.getPageEntities(from: pageRawContent)
+            
+            guard !content.isEmpty else { continue }
+            
             self.progressCircle.startAnimation(sender)
-            
-            let pageEntities = self.getPageEntities(from: pageRawContent)
-            
-            guard !pageEntities.content.isEmpty else { continue }
-            
-            self.telegraphClient.createPage(title: pageEntities.title, content: pageEntities.content) { (page, error) in
+            self.telegraphClient.createPage(title: title, content: content) { (page, error) in
                 if index == pagesRawContent.count - 1 {
                     self.progressCircle.stopAnimation(sender)
                 }
                 
                 if let error = error {
-                    self.appendOutputViewContent(withString: "Ошибка в обработке вопроса \"\(pageEntities.title)\": \(error)")
+                    self.appendOutputViewContent(withString: "Ошибка в обработке вопроса \"\(title)\": \(error)")
                     return
                 }
                 
@@ -56,7 +55,7 @@ class ViewController: NSViewController {
         self.outputView.string = ""
     }
     
-    private func getPagesContentFromInputView() -> [String] {
+    private func getPagesRawContentFromInputView() -> [String] {
         var pagesContent = self.inputView.string.split(regex: "\n\n[\t]*[0-9]+.[\t]*")
         
         pagesContent[0] = pagesContent[0].split(regex: "^[\t]*[0-9]+.[\t]*").last!

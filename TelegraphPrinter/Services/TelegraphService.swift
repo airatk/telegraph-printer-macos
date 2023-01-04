@@ -13,7 +13,7 @@ class TelegraphService {
     public let telegraphUrl = "https://telegra.ph/"
     
     private let telegraphApiUrl = "https://api.telegra.ph/"
-    private let accessToken = "c7bc0dbc804c2d4ee36baeb85df9175328e3c422cf0224181d33ad18434d"
+    private let accessToken = ProcessInfo.processInfo.environment["TELEGRAPH_ACCESS_TOKEN"]!
     private let jsonDecoder = {
         let jsonDecoder = JSONDecoder()
         
