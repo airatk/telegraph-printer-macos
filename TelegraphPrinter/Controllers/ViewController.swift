@@ -74,7 +74,7 @@ class ViewController: NSViewController {
         let content = pageRawParagraphs[1...].filter { !$0.isEmpty } .map {
             [
                 "tag": "p",
-                "children": [ $0 ]
+                "children": [ $0.trimmingCharacters(in: .whitespacesAndNewlines) ]
             ]
         }
         

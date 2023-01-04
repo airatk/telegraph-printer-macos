@@ -57,8 +57,19 @@ class TelegraphService {
                 return
             }
             
-            guard response.ok else {
+            let isFloodLimitExceeded = response.error?.starts(with: "FLOOD_WAIT_") ?? false
+            
+            guard response.ok || isFloodLimitExceeded else {
                 DispatchQueue.main.async { completion(nil, response.error) }
+                return
+            }
+            
+            guard !isFloodLimitExceeded else {
+                let waitSeconds = Double(response.error!.replacingOccurrences(of: "FLOOD_WAIT_", with: ""))!
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + waitSeconds) {
+                    self.createPage(title: title, content: content, completion)
+                }
                 return
             }
             
