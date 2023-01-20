@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -447,27 +448,43 @@
                                     <font key="font" metaFont="smallSystemBold"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="printAction:" target="XfG-lQ-9wD" id="s6C-6i-Ra0"/>
+                                    <action selector="print:" target="XfG-lQ-9wD" id="goa-h7-ESP"/>
                                 </connections>
                             </button>
                             <progressIndicator maxValue="100" displayedWhenStopped="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="qlh-Xn-7xX">
-                                <rect key="frame" x="448" y="248" width="16" height="16"/>
+                                <rect key="frame" x="336" y="248" width="16" height="16"/>
                             </progressIndicator>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vl7-U5-40D" userLabel="SortButton">
+                                <rect key="frame" x="448" y="247" width="64" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="FuN-67-2GH"/>
+                                    <constraint firstAttribute="width" constant="64" id="hbN-yr-ttx"/>
+                                </constraints>
+                                <buttonCell key="cell" type="inline" title="Sort" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="D7Y-cd-RAl">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="sort:" target="XfG-lQ-9wD" id="2D0-Dr-v8k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="5Z1-Go-36w" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="19b-rs-XUe"/>
                             <constraint firstAttribute="trailing" secondItem="dBz-qm-8hr" secondAttribute="trailing" id="5cf-Gl-X2H"/>
                             <constraint firstItem="3d0-Vp-TPw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="5km-C2-wL6"/>
                             <constraint firstItem="v1N-lr-C4s" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="7rh-kZ-HUg"/>
-                            <constraint firstItem="qlh-Xn-7xX" firstAttribute="leading" secondItem="v1N-lr-C4s" secondAttribute="trailing" constant="16" id="8De-Fs-9pj"/>
+                            <constraint firstItem="v1N-lr-C4s" firstAttribute="leading" secondItem="qlh-Xn-7xX" secondAttribute="trailing" constant="16" id="8De-Fs-9pj"/>
                             <constraint firstItem="3d0-Vp-TPw" firstAttribute="top" secondItem="v1N-lr-C4s" secondAttribute="bottom" constant="8" id="8S4-wN-bDZ"/>
                             <constraint firstAttribute="trailing" secondItem="3d0-Vp-TPw" secondAttribute="trailing" id="FNB-0I-Vhj"/>
                             <constraint firstItem="qlh-Xn-7xX" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="KGl-H3-TBC"/>
                             <constraint firstItem="dBz-qm-8hr" firstAttribute="top" secondItem="3d0-Vp-TPw" secondAttribute="bottom" id="M6I-w4-U3v"/>
                             <constraint firstAttribute="trailing" secondItem="5Z1-Go-36w" secondAttribute="trailing" id="MmL-Ot-D7e"/>
+                            <constraint firstItem="Vl7-U5-40D" firstAttribute="leading" secondItem="v1N-lr-C4s" secondAttribute="trailing" constant="16" id="SxO-8Q-z06"/>
                             <constraint firstItem="v1N-lr-C4s" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="WGc-qj-9il"/>
                             <constraint firstItem="T9P-ZX-EuI" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="WIT-tu-Dtd"/>
                             <constraint firstAttribute="bottom" secondItem="dBz-qm-8hr" secondAttribute="bottom" id="esH-xz-Enk"/>
+                            <constraint firstItem="Vl7-U5-40D" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="nam-V4-dpX"/>
                             <constraint firstItem="v1N-lr-C4s" firstAttribute="top" secondItem="T9P-ZX-EuI" secondAttribute="bottom" constant="8" id="oid-Cz-WWl"/>
                             <constraint firstItem="5Z1-Go-36w" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="pt8-Fg-ny8"/>
                             <constraint firstAttribute="trailing" secondItem="T9P-ZX-EuI" secondAttribute="trailing" id="sin-le-ull"/>
@@ -480,6 +497,7 @@
                         <outlet property="outputView" destination="loz-iF-llL" id="PCc-RH-USu"/>
                         <outlet property="printButton" destination="v1N-lr-C4s" id="AHA-i4-iDl"/>
                         <outlet property="progressCircle" destination="qlh-Xn-7xX" id="Fhy-Ju-N7o"/>
+                        <outlet property="sortButton" destination="Vl7-U5-40D" id="DmZ-yR-j8e"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
